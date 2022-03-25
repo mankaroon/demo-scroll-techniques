@@ -1,1 +1,60 @@
 /* developer styles go here */
+
+h2{
+    padding: 1rem;
+}
+p{
+    max-width: 60ch;
+}
+.inner-container{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.horizontal-group{
+    display: flex;
+    overflow: scroll;
+    /* remove the scroll bar visually in ff */
+    scrollbar-width: none;
+    /* to accomodate the hover height and avoid jank */
+    height: 237.7px;
+    align-items: center;
+}
+/* to remove scroll in other browsers */
+.horizontal-group::-webkit-scrollbar{
+    background: transparent;
+    width: 0;
+}
+
+/* movie title */
+.horizontal-group > div{
+    background-color: #3f1917;
+    height: 330px;
+    flex: 0 0 330px;
+    margin: 1rem 0.5rem;
+    border-radius: 3px;
+    transition: all 300mx ease-in;
+}
+/* create a hover effect so that the movie increases in size when in active */
+.horizontal-group > div:hover,
+.horizontal-group > div:active {
+    flex: 0 0 346.5px;
+    height: 205.7px;
+}
+
+
+/* Create a parallax scroll effect with a background image. The image
+must be taller than the element it is applied to */
+.featured{
+    background-image: url('../img/movie.jpg');
+    
+    background-position: top center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* this will fix the background image to viewport. Note this property
+    gets disabled on mobile due to performance */
+    background-attachment: fixed;
+    height: 500px;
+}
+.featured h2{
+    color: #fff;
+}
